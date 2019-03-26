@@ -1,0 +1,1 @@
+﻿$WorkingDir = $MyInvocation.MyCommand.Path | Split-Path -Parent

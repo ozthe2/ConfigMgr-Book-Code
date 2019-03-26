@@ -1,0 +1,1 @@
+﻿$WorkingDir = Get-Location
