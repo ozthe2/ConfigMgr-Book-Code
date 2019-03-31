@@ -1,0 +1,1 @@
+﻿start-process -FilePath "$ENV:SystemRoot\System32\msiexec.exe" -ArgumentList "/i ""$workingDir\Mimecast for Outlook 7.6.0.26320 (32 bit).msi"" /qn" -NoNewWindow -Wait
