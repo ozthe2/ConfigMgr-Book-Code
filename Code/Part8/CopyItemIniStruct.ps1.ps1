@@ -1,0 +1,1 @@
+﻿Copy-Item -Path '.\ini\*.*' -Destination "Env:SystemRoot\Ini" -ErrorAction SilentlyContinue

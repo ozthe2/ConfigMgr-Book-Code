@@ -1,0 +1,1 @@
+﻿$OSArchitecture = (Get-CimInstance -ClassName CIM_OperatingSystem).OSArchitecture

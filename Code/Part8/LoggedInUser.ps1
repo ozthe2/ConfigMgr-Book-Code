@@ -1,0 +1,1 @@
+﻿$LoggedInUser = (Get-CimInstance -ClassName CIM_ComputerSystem).username | Split-Path -Leaf

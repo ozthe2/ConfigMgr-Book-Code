@@ -1,0 +1,1 @@
+﻿Copy-Item -Path '*.*' -Destination 'C:\ohtemp\destination' -include '*.ini'

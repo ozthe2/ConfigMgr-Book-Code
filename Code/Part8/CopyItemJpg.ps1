@@ -1,0 +1,1 @@
+﻿Copy-Item -Path '*.*' -Destination "Env:SystemRoot\Wallpaper" -Include '*.jpg' -ErrorAction SilentlyContinue
