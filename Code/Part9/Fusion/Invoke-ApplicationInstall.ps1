@@ -8,7 +8,6 @@ function Invoke-PostInstallation {
     # Perhaps copy some files, register some DLL's or anything else you can think of!
 }
 
-
 Function Invoke-ApplicationInstall {
 
     # Installs applications depending on office bitness or os bitness
@@ -68,14 +67,14 @@ Function Invoke-ApplicationInstall {
         # --- END PRE-INSTALL ---
 
         if ($InstallBasedOnOfficeBitness) {
-            # Install the application depending on if Microsoft Office is 64bit or 32bit or not installed
-            # $True = Office is 32bit - Use this part to install 32bit applications
-            # False = Office is 64bit - Use this part to install 64bit applications
+             #Install the application depending on if Microsoft Office is 64bit or 32bit or not installed
+             $True = Office is 32bit - Use this part to install 32bit applications
+             False = Office is 64bit - Use this part to install 64bit applications
             # Unknown = Office may not be installed.
 
             switch ($Obj.OfficeIs32Bit) {
-                $true {"Install a 32-bit application here"}
-                $false {"Install a 64-bit application here"}
+                $true {start-process -FilePath "$WorkingDir\FUSION Excel Connect Client 32bit.exe" -ArgumentList ' /S "/V /qn ERPSYSTEM=SageX3"' -Wait -NoNewWindow}
+                $false {start-process -FilePath "$WorkingDir\FUSION Excel Connect Client 64bit.exe" -ArgumentList ' /S "/V /qn ERPSYSTEM=SageX3"' -Wait -NoNewWindow}
                 'Unknown' {"Office not detected - do what you want here"}     
             }
         }
@@ -108,5 +107,6 @@ Function Invoke-ApplicationInstall {
     }
 }
 
+
 #Script entry point
-Invoke-ApplicationInstall
+Invoke-ApplicationInstall -InstallBasedOnOfficeBitness
