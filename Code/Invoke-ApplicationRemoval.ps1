@@ -29,7 +29,7 @@ Invoke-ApplicationRemoval "Adobe Acrobat Reader DC" -Exact
     If installed, Adobe Acrobat Reader DC will be uninstalled.  If Adobe Acrobat Reader Pro is also installed, this will remain.
 .NOTES
 Created by OH
-https://www.fearthepanda.com
+https://fearthepanda.com
 Version: 1.0.1
 #>
 [CmdletBinding(SupportsShouldProcess=$True)]
