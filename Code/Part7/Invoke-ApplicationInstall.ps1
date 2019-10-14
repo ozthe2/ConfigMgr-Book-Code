@@ -57,12 +57,7 @@ Function Invoke-ApplicationInstall {
         Pop-Location
     }
 
-    Process {
-        <#Install your applications at the two switch statements (Lines 64,65,66 or 75,76).
-        Use something like:
-        start-process -FilePath "$ENV:SystemRoot\System32\msiexec.exe" -ArgumentList "/i ""$workingDir\YourMSI"" /qn" -NoNewWindow -Wait
-        #>
-
+    Process { 
         # --- PRE-INSTALL SECTION ---       
         
         Invoke-PreInstallation
