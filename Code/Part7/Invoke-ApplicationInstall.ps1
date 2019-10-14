@@ -13,7 +13,7 @@ Function Invoke-ApplicationInstall {
 
     # Installs applications depending on office bitness or os bitness
     # To install using Office bitness, use the switch -InstallBasedOnOfficeBitness
-    # To install based on OS bitness do not use the switch
+    # To install based on OS architecture (32-bit or 64-bit) do not use the switch
 
     [CmdletBinding()]
 
