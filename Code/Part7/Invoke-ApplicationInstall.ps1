@@ -26,7 +26,7 @@ Function Invoke-ApplicationInstall {
         $WorkingDir = Get-Location
         $LoggedInUser = (Get-CimInstance -ClassName CIM_ComputerSystem).username | Split-Path -Leaf
         $OSArchitecture = (Get-CimInstance -ClassName CIM_OperatingSystem).OSArchitecture
-        $OfficePath = 'HKLM:\Software\Microsoft\Office'
+        $OfficePaths = @('HKLM:\Software\Microsoft\Office','HKLM:\Software\WOW6432Node\Microsoft\Office')
         $OfficeVersions = @('14.0', '15.0', '16.0')
 
         Push-Location
