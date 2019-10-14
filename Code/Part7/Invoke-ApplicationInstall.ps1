@@ -31,19 +31,21 @@ Function Invoke-ApplicationInstall {
 
         Push-Location
 
-        foreach ($Version in $OfficeVersions) {
-            try {
-                Set-Location "$OfficePath\$Version\Outlook" -ea stop -ev x
-                $Bitness = Get-ItemPropertyValue -Name "Bitness" -ea stop -ev x
-                switch ($bitness) {
-                    'x86' {$Is32Bit = $True}
-                    'x64' {$Is32Bit = $false}                
+        foreach ($Path in $OfficePaths) {
+            foreach ($Version in $OfficeVersions) {
+                try {
+                    Set-Location "$Path\$Version\Outlook" -ea stop -ev x
+                    $Bitness = Get-ItemPropertyValue -Name "Bitness" -ea stop -ev x
+                    switch ($bitness) {
+                        'x86' {$Is32Bit = $True}
+                        'x64' {$Is32Bit = $false}                
+                    }
+                    break
+                } catch {
+                    $Is32Bit = 'Unknown'
                 }
-                break
             }
-            catch {
-                $Is32Bit = 'Unknown'
-            }
+            if ($Is32Bit -eq $true -or $Is32Bit -eq $false) {break}
         }
 
         $Obj = [pscustomobject]@{
