@@ -2,8 +2,7 @@
 
 [CmdletBinding()]
 
-    param ()
-    
+    param ()    
 
     Process {
         write-output "I'm doing something really cool"
